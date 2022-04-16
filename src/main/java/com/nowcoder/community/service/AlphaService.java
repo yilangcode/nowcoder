@@ -1,12 +1,19 @@
 package com.nowcoder.community.service;
 
 import com.nowcoder.community.dao.AlphaDao;
+import com.nowcoder.community.util.CommunityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Service
 public class AlphaService {
@@ -32,5 +39,7 @@ public class AlphaService {
     public String find(){
         return alphaDao.select();
     }
+
+
 
 }
